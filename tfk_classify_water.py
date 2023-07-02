@@ -8,22 +8,22 @@ import matplotlib.pyplot as plt
 BATCH_SIZE = 20
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
-IMAGES_PATH = '/path/to/holiday_photos'
+IMAGES_PATH = "/path/to/holiday_photos"
 
 
 # creating the training and validation datasets by loading the images from the folder, based on the folder structure
 # each subfolder, such as water or other, will be regarded as an image category
 train_ds, val_ds = keras.utils.image_dataset_from_directory(
     IMAGES_PATH,
-    labels='inferred',
-    color_mode='rgb',
+    labels="inferred",
+    color_mode="rgb",
     batch_size=BATCH_SIZE,
     image_size=(IMG_WIDTH, IMG_HEIGHT),
     shuffle=True,
     validation_split=0.2,
     subset="both",  # both training and validation sets
     seed=123,
-    label_mode='binary'
+    label_mode="binary"
     # we have two categories, water and other; in case of more, it can be 'categorical'
 )
 
@@ -73,7 +73,7 @@ model.add(keras.layers.Conv2D(filters=32,  # how many different filters should b
                                            # each filter will be able to detect one pattern in the image
                               kernel_size=(3, 3),  # size of the window that we'll use when creating image tiles
                                                    # from each image; 3 pixels x 3 pixels
-                              padding='same',  # if in the last image tile we don't have 3 pixels left,
+                              padding="same",  # if in the last image tile we don't have 3 pixels left,
                                                # we pad it with zeros
                               input_shape=(IMG_WIDTH, IMG_HEIGHT, 3),  # 256 pixels x 256 pixels, 3 RGB channels;
                                                                        # input shape required only for the first layer
@@ -83,7 +83,7 @@ model.add(keras.layers.Conv2D(filters=32,  # how many different filters should b
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 model.add(keras.layers.Dropout(0.25))
 
-model.add(keras.layers.Conv2D(64, (3, 3), padding='same', activation="relu"))
+model.add(keras.layers.Conv2D(64, (3, 3), padding="same", activation="relu"))
 model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
 model.add(keras.layers.Dropout(0.25))
 
@@ -95,9 +95,9 @@ model.add(keras.layers.Dense(1, activation="sigmoid"))
 
 # compiling the model with the loss function and optimizer; in case of more categories use categorical_crossentropy
 model.compile(
-    loss='binary_crossentropy',
+    loss="binary_crossentropy",
     optimizer=keras.optimizers.legacy.Adam(),
-    metrics=['acc']
+    metrics=["acc"]
 )
 
 # printing the summary of the model

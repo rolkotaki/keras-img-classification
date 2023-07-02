@@ -9,7 +9,7 @@ def copy_image_to_category_folder(images_path, image, image_type):
     if image_type == 'w':
         image_folder = 'water'
     # suspecting that the photos to be classified are in a folder inside the main folder
-    shutil.copyfile(os.path.join(images_path, image), os.path.join(images_path, './../', image_folder, image))
+    shutil.copyfile(os.path.join(images_path, image), os.path.join(images_path, "./../", image_folder, image))
 
 
 def classify_images(images_path):
@@ -44,4 +44,4 @@ def classify_images(images_path):
             break
 
 
-classify_images('/path/to/holiday_photos/2023_best_trip_ever')
+classify_images("/path/to/holiday_photos/2023_best_trip_ever")

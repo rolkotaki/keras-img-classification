@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
-IMAGES_PATH = '/path/to/holiday_photos'
+IMAGES_PATH = "/path/to/holiday_photos"
 CLASS_LABELS = ["other", "water"]
 
 
