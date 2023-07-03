@@ -11,13 +11,8 @@ IMAGES_PATH = "/path/to/holiday_photos"
 CLASS_LABELS = ["other", "water"]
 
 
-# loading the json file that contains the model's structure
-f = Path("model_structure.json")
-model_structure = f.read_text()
-# recreating the Keras model object
-model = keras.models.model_from_json(model_structure)
-# loading the model's weights
-model.load_weights("model_weights.h5")
+# loading the model
+model = keras.models.load_model("saved_model")
 
 # plotting twenty photos with the model's predictions
 plt.figure(figsize=(10, 10))

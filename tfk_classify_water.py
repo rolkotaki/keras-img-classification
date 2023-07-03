@@ -31,10 +31,9 @@ class_names = np.array(train_ds.class_names)
 print(class_names)
 
 # the shape of the datasets
-for image_batch, label_batch in train_ds.take(1):
-    print(image_batch.shape)
-    print(label_batch.shape)
-    break
+[(image_batch, label_batch)] = train_ds.take(1)
+print(image_batch.shape)
+print(label_batch.shape)
 
 
 # standardizing the RGB values to be within the [0-1] range
@@ -111,9 +110,5 @@ model.fit(
     shuffle=True
 )
 
-# saving the neural network structure
-model_structure = model.to_json()
-f = Path("model_structure.json")
-f.write_text(model_structure)
-# saving neural network's trained weights
-model.save_weights("model_weights.h5")
+# saving the model as TensorFlow SavedModel format
+model.save("saved_model")

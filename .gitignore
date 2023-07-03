@@ -3,3 +3,4 @@ idea/
 .idea
 *.json
 *.h5
+saved_model
