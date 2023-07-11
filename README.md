@@ -1,6 +1,8 @@
 # keras-img-classification
 Image classification with Python's Keras using my travelling photos
 
+My blog article about this project: [here](https://rolkotech.blogspot.com/2023/07/image-classification-with-pythons-keras.html)
+
 ## Description
 
 In this project I use my own travelling photos to train a neural network so that I can classify my photos. Currently, the model classifies the images based on if they contain water (sea, river, lake, etc) or not.
