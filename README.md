@@ -1,5 +1,5 @@
-# keras-img-classification
-Image classification with Python's Keras using my travelling photos
+# Keras Image Classification
+Image classification with Python's Keras using my travelling photos.
 
 My blog article about this project: [here](https://rolkotech.blogspot.com/2023/07/image-classification-with-pythons-keras.html)
 
