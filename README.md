@@ -1,7 +1,7 @@
 # Keras Image Classification
 Image classification with Python's Keras using my travelling photos.
 
-My blog article about this project: [here](https://rolkotech.blogspot.com/2023/07/image-classification-with-pythons-keras.html)
+My blog article about this project: [here](https://www.rolkotech.com/articles/image-classification-with-pythons-keras)
 
 ## Description
 
@@ -28,9 +28,9 @@ Files:
 * `tfk_predict_water.py` : library that uses our model to predict image categories
 
 Third-party libraries used:
-* tensorflow (keras)
-* numpy
-* matplotlib
-* opencv-python
+* `tensorflow` (keras)
+* `numpy`
+* `matplotlib`
+* `opencv-python`
 
 Python version used for the development: Python 3.9.6
